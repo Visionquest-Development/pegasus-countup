@@ -2,9 +2,9 @@
  
 ## Usage
 How to use in your WordPress site<br>
-`[circle_progress number="90"]`<br>
+`[counter_up number="83"]`<br>
 Or<br>
-`[circle_progress number="90" color="#dedede"]`<br>
+`[counter_up number="83" color="#dedede"]`<br>
 Shortcode Attributes: http://pegasustheme.com/pegasus-countup/
 
 
