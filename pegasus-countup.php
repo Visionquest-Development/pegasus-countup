@@ -20,7 +20,7 @@ Domain Path: /languages
 	}
 
 	function pegasus_countup_menu_item() {
-		add_menu_page("countup", "countup", "manage_options", "pegasus_countup_plugin_options", "pegasus_countup_plugin_settings_page", null, 99);
+		//add_menu_page("countup", "countup", "manage_options", "pegasus_countup_plugin_options", "pegasus_countup_plugin_settings_page", null, 99);
 		
 	}
 	add_action("admin_menu", "pegasus_countup_menu_item");
@@ -66,6 +66,7 @@ Domain Path: /languages
 	~~~~~~~~~~~~~~~~~~~~~*/
 	// [counter_up number="90"] 
 	function pegasus_counter_up_func( $atts, $content = null ) {
+		$output = '';
 		$a = shortcode_atts( array(
 			'number' => '',
 			'container' => '',
