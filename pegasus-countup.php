@@ -211,7 +211,7 @@ Domain Path: /languages
 		//wp_enqueue_script( 'images-loaded-js', trailingslashit( plugin_dir_url( __FILE__ ) ) . 'js/imagesLoaded.js', array( 'jquery' ), null, true );
 
 		wp_register_script( 'countup-js', trailingslashit( plugin_dir_url( __FILE__ ) ) . 'js/countup.js', array( 'jquery' ), null, 'all' );
-		wp_register_script( 'pegasus-countup-plugin-js', trailingslashit( plugin_dir_url( __FILE__ ) ) . 'js/plugin.js', array( 'jquery' ), null, 'all' );
+		wp_register_script( 'pegasus-countup-plugin-js', trailingslashit( plugin_dir_url( __FILE__ ) ) . 'js/pegasus-countup-plugin.js', array( 'jquery' ), null, 'all' );
 
 	} //end function
 	add_action( 'wp_enqueue_scripts', 'pegasus_countup_plugin_js' );
@@ -234,9 +234,13 @@ Domain Path: /languages
 
 		$container_chk = "{$a['container']}";
 		if($container_chk ) {
-			$output .= "<{$a['container']} class='counter {$a['class']}'>{$a['number']}</{$a['container']}>";
+			$output .= "<{$a['container']} class='counter {$a['class']}' >";
+				$output .= "{$a['number']}";
+			$output .= "</{$a['container']}>";
 		}else{
-			$output .= "<div class='counter {$a['class']}'>{$a['number']}</div>";
+			$output .= "<div class='counter {$a['class']}' >";
+				$output .= "{$a['number']}";
+			$output .= "</div>";
 		}
 
 		wp_enqueue_script( 'waypoints-js' );
