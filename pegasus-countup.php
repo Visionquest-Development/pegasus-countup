@@ -206,12 +206,12 @@ Domain Path: /languages
 	function pegasus_countup_plugin_js() {
 
 
-		wp_register_script( 'waypoints-js', trailingslashit( plugin_dir_url( __FILE__ ) ) . 'js/waypoints.js', array( 'jquery' ), null, 'all' );
+		wp_register_script( 'waypoints-js', trailingslashit( plugin_dir_url( __FILE__ ) ) . 'js/waypoints.js', array( 'jquery' ), '4.0.1', true );
 
 		//wp_enqueue_script( 'images-loaded-js', trailingslashit( plugin_dir_url( __FILE__ ) ) . 'js/imagesLoaded.js', array( 'jquery' ), null, true );
 
-		wp_register_script( 'countup-js', trailingslashit( plugin_dir_url( __FILE__ ) ) . 'js/countup.js', array( 'jquery' ), null, 'all' );
-		wp_register_script( 'pegasus-countup-plugin', trailingslashit( plugin_dir_url( __FILE__ ) ) . 'js/pegasus-countup-plugin.js', array( 'jquery' ), null, 'all' );
+		wp_register_script( 'countup-js', trailingslashit( plugin_dir_url( __FILE__ ) ) . 'js/countup.js', array( 'jquery', 'waypoints-js' ), '2.1.0', true );
+		wp_register_script( 'pegasus-countup-plugin', trailingslashit( plugin_dir_url( __FILE__ ) ) . 'js/pegasus-countup-plugin.js', array( 'jquery', 'countup-js' ), '1.0.0', true );
 
 	} //end function
 	add_action( 'wp_enqueue_scripts', 'pegasus_countup_plugin_js' );
